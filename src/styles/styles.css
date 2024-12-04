@@ -110,8 +110,11 @@ body {
 }
 
 #temp_min_icon {
-    color: rgb(0, 102, 255);
+    color: #0284c7;
 }
-#humid {
-    color: rgb(0, 102, 255);
+#humidity_icon {
+    color: #0ea5e9;
+}
+#wind_icon {
+    color:#7c3aed ;
 }
