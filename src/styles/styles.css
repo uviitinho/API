@@ -105,3 +105,13 @@ body {
     font-size: 20px;
     width: 20%;
 }
+#temp_max_icon {
+    color: #7f1d1d;
+}
+
+#temp_min_icon {
+    color: rgb(0, 102, 255);
+}
+#humid {
+    color: rgb(0, 102, 255);
+}
