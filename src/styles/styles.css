@@ -93,4 +93,15 @@ body {
     padding: 4px 10px;
     border-radius: 8px;
     box-shadow: 0px 0px 5px rgb(0 , 0, 0,0.3);
+    background-color: white;
+    gap: 10px;
+}
+#other_infos .info h2{
+    font-size: 12px;
+    font-weight: 600;
+}
+#other_infos .info i{
+    text-align: center;
+    font-size: 20px;
+    width: 20%;
 }
