@@ -8,37 +8,33 @@ document.querySelector('#search').addEventListener('submit', async (event) => {
     }
 
     const apiKey = '080b31f3be9fb37443746d519f12c5f3';
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cityName)}&appid=${apiKey}&units=metric&lang=pt_br`
-    
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURI(cityName)}&appid=${apiKey}&units=metric&lang=pt_br`;
 
-    const results = await fetch (apiUrl);
+    const results = await fetch(apiUrl);
     const json = await results.json();
 
     console.log(json);
 
-    if (json.cod === 200){
+    if (json.cod === 200) {
         showInfo({
             city: json.name,
             country: json.sys.country,
             temp: json.main.temp,
             tempMax: json.main.temp_max,
             tempMin: json.main.temp_min,
-            description: json.weather[0].description,
-            tempIcon: json.weather[0].icon,
+            description: json.weather[0].description, 
+            tempIcon: json.weather[0].icon, 
             windSpeed: json.wind.speed,
-            humidity: json.wind.humity,
-
-        })
-    }else {
-        alert('Não foi possivel localizar...')
+            humidity: json.main.humidity, 
+        });
+    } else {
+        alert('Não foi possível localizar...');
     }
-
 });
 
-function showInfo(json){
-    document.querySelector('#title').innerHTML = `${json.city} , ${json.country} `;
-    document.querySelector('#temp_value').innerHTML = `${json.temp .toFixed(1).toString().replace('.', ',')}  <sup>C°</sup>`;
-
+function showInfo(json) {
+    document.querySelector('#title').innerHTML = `${json.city}, ${json.country}`;
+    document.querySelector('#temp_value').innerHTML = `${json.temp.toFixed(1).toString().replace('.', ',')} <sup>°C</sup>`;
+    document.querySelector('#temp_description').innerHTML = `${json.description}`; 
+    document.querySelector('#temp_img').setAttribute('src', `https://openweathermap.org/img/wn/${json.tempIcon}@2x.png`); 
 }
-
-   
