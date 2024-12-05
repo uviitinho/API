@@ -7,5 +7,6 @@ document.querySelector('#search').addEventListener('submit', (event) => {
         return alert('Você precisa digitar uma cidade...');
     }
 
-    console.log('Cidade digitada:', cityName);
+    console.log(cityName);
 });
+
